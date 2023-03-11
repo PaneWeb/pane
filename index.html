@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <center>
+    <canvas id="canvas2" width="300" height="300"></canvas>
+   </center>
+    <style>
+      body{
+        background: black;
+      }
+canvas{
+  border: 5px white solid;
+  background-color: black;
+}
+    </style>
+    <script>
+    // Functions ...
+    var x = 200;
+    var y = 200;
+  var vx=-1;
+  var vy=+1;
+    function tyt() {
+var  ccreen =  document.getElementById('canvas2');
+var  top = ccreen.getContext('2d');
+if (x==300) {
+  vx=-1;
+}
+if (x==0) {
+  vx=+1;
+}
+if (y==300) {
+  vy=-1;
+}
+if (y==0) {
+  vy=+1;
+}
+top.beginPath();
+top.arc(x,y,10,0*Math.PI,2*Math.PI);
+top.clearRect(0,0,300,300);
+top.fillStyle="white";
+top.fill();
+x+=vx*5;
+y+=vy*5;
+}
+setInterval(tyt,10);
+    </script>
+  </body>
+</html>
