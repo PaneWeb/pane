@@ -6,13 +6,27 @@
   </head>
   <body>
     <center>
-    <canvas id="canvas2" width="300" height="300"></canvas>
+    <canvas id="canvas1" width="300" height="300"></canvas>
+    <br>
+    <font>X</font>
+    <input id="npt1">
+    <br>
+    <font>Y</font>
+    <input id="npt2">
    </center>
     <style>
-      body{
+      font {
+       font-size: 1.5em;
+       color: white;
+       font-family: sans-serif;
+      }
+      input {
+        color: black;
+      }
+      body {
         background: black;
       }
-canvas{
+canvas {
   border: 5px white solid;
   background-color: black;
 }
@@ -23,9 +37,15 @@ canvas{
     var y = 200;
   var vx=-1;
   var vy=+1;
+  window.addEventListener('keydown', q => {
+if(q.key === 'Enter') {
+  x = npt1.value=Number(npt1.value)
+  y = npt2.value=Number(npt2.value)
+}
+  })
     function tyt() {
-var  ccreen =  document.getElementById('canvas2');
-var  top = ccreen.getContext('2d');
+var  screen1 =  document.getElementById('canvas1');
+var  top = screen1.getContext('2d');
 if (x==300) {
   vx=-1;
 }
