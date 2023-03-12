@@ -6,67 +6,37 @@
   </head>
   <body>
     <center>
-    <canvas id="canvas1" width="300" height="300"></canvas>
-    <br>
-    <font>X</font>
-    <input id="npt1">
-    <br>
-    <font>Y</font>
-    <input id="npt2">
+      <br>
+<button>buton1</button>
+<button>buton2</button>
+<button>buton3</button>
+<button>buton4</button>
+<button>buton5</button>
+<button>buton6</button>
    </center>
     <style>
-      font {
-       font-size: 1.5em;
-       color: white;
-       font-family: sans-serif;
-      }
-      input {
-        color: black;
-      }
-      body {
-        background: black;
-      }
-canvas {
-  border: 5px white solid;
-  background-color: black;
-}
+    body {
+      background-color: #121212;
+    }
+    button {
+      background-color: azure;
+      border-color: azure;
+      width: 75px;
+      height: 100px;
+      color: #121212;
+      font-size: 1.5em;
+      border: azure 3px solid;
+      border-radius: 5px;
+      -ms-flex-item-align: center;
+      align-items: center;
+      justify-items: center;
+      transition: 0.5s;
+    }
+       button:hover {
+      background-color: #121212;
+      border-color: azure;
+      color: azure;
+    }
     </style>
-    <script>
-    // Functions ...
-    var x = 200;
-    var y = 200;
-  var vx=-1;
-  var vy=+1;
-  window.addEventListener('keydown', q => {
-if(q.key === 'Enter') {
-  x = npt1.value=Number(npt1.value)
-  y = npt2.value=Number(npt2.value)
-}
-  })
-    function tyt() {
-var  screen1 =  document.getElementById('canvas1');
-var  top = screen1.getContext('2d');
-if (x==300) {
-  vx=-1;
-}
-if (x==0) {
-  vx=+1;
-}
-if (y==300) {
-  vy=-1;
-}
-if (y==0) {
-  vy=+1;
-}
-top.beginPath();
-top.arc(x,y,10,0*Math.PI,2*Math.PI);
-top.clearRect(0,0,300,300);
-top.fillStyle="white";
-top.fill();
-x+=vx*5;
-y+=vy*5;
-}
-setInterval(tyt,10);
-    </script>
   </body>
 </html>
