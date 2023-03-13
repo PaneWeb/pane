@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <center>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <br><br>
+    <font>X</font>
+    <input type="number" id="npt1">
+    <br>
+    <font>Y</font>
+    <input type="number" id="npt2">
+    <br><br>
+    <button onclick="bob();">Start</button>
+   </center>
+    <style>
+      body {
+        background: #121212;
+      }
+      input {
+        background-color: #121212;
+        border: 3px white solid;
+        border-radius: 5px;
+        color: white;
+        font-family: cursive;
+      }
+      button {
+        background-color: white;
+        width: 100px;
+        height: 50px;
+        color: #121212;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        border: white 3px solid;
+        border-radius: 5px;
+        transition: 0.5s;
+      }
+      font {
+        color: white;
+        font-size: 1.5em;
+        font-family: cursive;
+      }
+canvas {
+  border: 5px white solid;
+  background-color: #121212;
+  border-radius: 5px;
+}
+button:hover {
+background-color: #121212;
+border-color: white;
+color: white;
+}
+    </style>
+    <script>
+    // Functions ...
+    var x = 200;
+    var y = 200;
+  var vx=-1;
+  var vy=+1;
+      window.addEventListener('keydown',q => {
+      if (q.key === 'Enter') {
+      x=npt1.value=Number(npt1.value);
+      y=npt2.value=Number(npt2.value);
+     }
+    });
+    function tyt() {
+var  $screen =  document.getElementById('canvas');
+var  top = $screen.getContext('2d');
+if (x==300) {
+  vx=-1;
+}
+if (x==0) {
+  vx=+1;
+}
+if (y==300) {
+  vy=-1;
+}
+if (y==0) {
+  vy=+1;
+}
+top.beginPath();
+top.arc(x,y,10,0*Math.PI,2*Math.PI);
+top.clearRect(0,0,300,300);
+top.fillStyle="white";
+top.fill();
+x+=vx*5;
+y+=vy*5;
+}
+function bob () {
+  x=npt1.value=Number(npt1.value);
+  y=npt2.value=Number(npt2.value);
+}
+setInterval(tyt,10);
+    </script>
+  </body>
+</html>
