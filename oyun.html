@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <center>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <br>
+    <button id="btn1"></button>
+    </center>
+    <style>
+    body{
+      background-color: #121212;
+    }
+canvas{
+  background-color: #121212;
+    border: 5px white solid;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+#btn1 {
+border: 3px white solid;
+background-color: white;
+border-radius: 5px;
+transition: 0.5s;
+height: 25px;
+}
+input{
+  font-size: 2em;
+  color: white;
+  border: 0px white solid;
+  background-color: black;
+}
+    </style>
+    <script>
+    // Deisgenler ...
+    var random1 = Math.floor(Math.random()*12);
+    var x1 = 200; var y1 = 200; var c1 = 1;
+    var x2 = 250; var y2 = 200; var moo = 0;
+    var point = 0; var bnz = 100;
+    var mt = 0;
+    // Klavye haraketi (bob)
+    window.addEventListener('keydown',q => {
+      if (bnz>0) {if (q.key === 'w') {mt=4;}}
+      if (bnz>0) {if (q.key === 's') {mt=3;}}
+      if (bnz>0) {if (q.key === 'd') {mt=1;}}
+      if (bnz>0) {if (q.key === 'a') {mt=2;}}
+    });
+function  b1(){
+  var  $screen =  document.getElementById('canvas');
+  var  bob = $screen.getContext('2d');
+  // Oyun Bitti (bob)
+  if (x1==-10||x1==290||y1==-10||y1==290) {
+    alert('Oyun Bitti!');
+    alert('Skorun:'+point);
+    x1=200;y1=200;point=0;mt=0;bnz=100;
+  }
+// Skor Kontroü ...
+if (x2==x1) {if (y2==y1)
+  {moo=0;x2=600;y2=600;point+=1;bnz+=20;
+}}
+if (x2==x1+10) {if (y2==y1+10)
+  {moo=0;x2=600;y2=600;point+=1;bnz+=20;
+}}
+if (x2==x1-10) {if (y2==y1-10)
+  {moo=0;x2=600;y2=600;point+=1;bnz+=20;
+}}
+  document.getElementById('btn1').style="width:"+bnz+"px;";
+//  Car
+if (c1==1) {
+      bob.clearRect(0,0,300,300);
+    bob.fillStyle='white';
+    bob.beginPath();
+  bob.roundRect(x1,y1,20,20,3);
+  bob.fill();
+}
+  // Gold
+  if (moo==1) {
+bob.fillStyle='white';
+bob.beginPath();
+bob.roundRect(x2,y2,20,20,3);
+bob.fill();
+}}
+// Haraket Kontrol (bob)
+    function qwe(){
+      if (mt==1) {x1+=10;}
+      if (mt==2) {x1-=10;}
+      if (mt==3) {y1+=10;}
+      if (mt==4) {y1-=10;}
+  }
+  function zxc(){
+    // Altın Yakalanma Kontrolü
+      if (moo==0) {random1 = Math.floor(Math.random()*13);moo=1;}
+    if (random1==0) {x2=120;y2=30;}
+    if (random1==1) {x2=50;y2=270;}
+    if (random1==2) {x2=100;y2=100;}
+    if (random1==3) {x2=210;y2=240;}
+    if (random1==4) {x2=120;y2=120;}
+    if (random1==5) {x2=40;y2=140;}
+    if (random1==6) {x2=150;y2=150;}
+    if (random1==7) {x2=50;y2=40;}
+    if (random1==8) {x2=30;y2=200;}
+    if (random1==9) {x2=20;y2=210;}
+    if (random1==10) {x2=200;y2=240;}
+    if (random1==11) {x2=260;y2=60;}
+    if (random1==12) {x2=50;y2=50;}
+}
+function bnz1(){
+  // Benzin Kontrolü
+    if (mt==0) {} else {bnz-=10}
+}
+setInterval(qwe,70);
+setInterval(b1,70);
+setInterval(zxc,2000);
+setInterval(bnz1,1500);
+    </script>
+  </body>
+</html>
