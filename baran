@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+<meta name="description" content="Baran Öğüt özel eğtim uzmanı.<br>İrlandalı,<br>Yakışıklı bir adamdır">
+<meta name="keywords" content="Baran Öğüt, Özel eğtim, Öğretmen">
+<meta name="author" content="Baran Öğüt">
+    <title>il mio sito</title>
+  </head>
+  <body>
+<div class="bnr">
+  <div class="vbr">
+    <font>Baran Öğüt</font>
+    <ul>
+<li><a href="#">Ana Sayfa</a></li>
+<li><a href="#">Kanalım</a></li>
+<li><a href="#">Projelerim</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <img src="https://e7.pngegg.com/pngimages/847/466/png-clipart-university-of-hagen-teacher-professor-computer-icons-teacher-angle-logo.png" alt="Baran Öğüt"  width="100" height="100" class="oto">
+  <h1>Hakkımda</h1>
+  <p>Baran Öğüt özel eğtim uzmanı.<br>İrlandalı,<br>Yakışıklı bir adamdır</p>
+<a href="#"><button type="button" id="btn1">Youtube</button></a>
+<button type="button" id="btn2">Tweteer</button>
+  </div>
+</div>
+    <style>
+*{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+.vbr font{
+  color: white;
+  text-align: left;
+  font-size: 2em;
+}
+.bnr{
+  height: 100%;
+  width: 100%;
+  background-color: #202020;
+}
+.vbr{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 32px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.oto{
+  cursor: pointer;
+  border-radius: 50%;
+  border: 3px #413543 solid;
+}
+.vbr ul li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 25px;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+.content{
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  color: #fff;
+  text-align: center;
+}
+.content h1{
+  font-size: 61px;
+}
+.content h1 p{
+  margin: 20px auto;
+}
+  button{
+    width: 200px;
+    padding: 15px 0;
+    border-radius: 35px;
+    border: 0px;
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #413543;
+    font-size: 17px;
+}
+button:hover{
+  background-color: #2D2727;
+  transition: 0.5s;
+}
+p{
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.bnr ul li a:hover{
+  box-shadow: 0px 3px #413543;
+}
+body{
+background-color: #121212;
+}
+    </style>
+  </body>
+</html>
