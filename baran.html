@@ -2,120 +2,100 @@
 <html lang="tr" dir="ltr">
   <head>
     <meta charset="UTF-8">
-<meta name="description" content="Baran Öğüt özel eğtim uzmanı.<br>İrlandalı,<br>Yakışıklı bir adamdır">
-<meta name="keywords" content="Baran Öğüt, Özel eğtim, Öğretmen">
-<meta name="author" content="Baran Öğüt">
-    <title>il mio sito</title>
+<meta name="description" content="Pane web tasarımcısıdır.">
+<meta name="keywords" content="pane, Pane, paneweb, PaneWeb,">
+<meta name="author" content="Pane">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaneWeb</title>
   </head>
   <body>
-<div class="bnr">
-  <div class="vbr">
-    <input type="button" value="Baran Öğüt">
-    <ul>
-<li><a href="#">Ana Sayfam</a></li>
-<li><a href="#">Videolarım</a></li>
-<li><a href="#">Makalelerim</a></li>
-    </ul>
-  </div>
-  <div class="content">
-    <img src="https://e7.pngegg.com/pngimages/847/466/png-clipart-university-of-hagen-teacher-professor-computer-icons-teacher-angle-logo.png" alt="Baran Öğüt"  width="100" height="100" class="oto">
+<div class="menu">
+  <button><a href="#">Ana sayfa</a></button>
+  <button><a href="#">Projelerim</a></button>
+  <button><a href="#">İletişim</a></button>
+</div>
+<div class="info">
+  <img src="https://media.discordapp.net/attachments/1082363167436456026/1088505333409919056/pane.png" alt="pane">
   <h1>Hakkımda</h1>
-  <p>Baran Öğüt özel eğtim uzmanı.<br>İrlandalı,<br>Yakışıklı bir adamdır</p>
-<button type="button" id="btn1">Youtube</button>
-<button type="button" id="btn2">İnstagram</button>
-  </div>
+  <h2>Yazılımcıyım<br>Harika bir web sitem<br> ve birBilgisayarım var</h2>
+  <button>Youtube</button>
+  <button>Instagram</button>
 </div>
     <style>
-*{
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-}
-.vbr input{
-  color: #121212;
-  position: absolute;
-  width: 200px;
-  height: 88px;
-  text-align: center;
-  border: 0px;
-  font-size: 2em;
-  background-color: white;
-}
-.bnr{
-  height: 100%;
+    * {
+      margin: 0;
+      padding: 0;
+      color: orange;
+      font-size: 20px;
+      text-align: center;
+      font-family: monospace;
+      text-shadow: 0px 0px 10px orange;
+    }
+.menu {
   width: 100%;
-  background-color: #146C94;
+  height: 50px;
+  background-color: #242424;
+  line-height: 50px;
 }
-.vbr{
-  display: flex;
-  width: 90%;
-  margin: auto;
-  padding: 32px 0;
-  align-items: center;
-  justify-content: space-between;
-}
-.oto{
-  cursor: pointer;
-  border-radius: 50%;
-  border: 4px #146C94 solid;
-}
-.vbr ul li{
-  height: inherit;
-  list-style-type: none;
-  display: inline-block;
-  position: relative;
-  right: -675px;
-  margin: 0 25px;
-}
-a{
+.menu a {
+  color: white;
+  text-shadow: 0px 0px 10px white;
   text-decoration: none;
-  color: #fff;
-  font-size: 20px;
 }
-.content{
-  width: 100%;
-  position: absolute;
-  top: 20%;
-  color: #fff;
+.menu button {
+  width: 120px;
+  height: 50px;
+  background-color: #242424;
+  border: 0px;
   text-align: center;
-}
-.content h1{
-  font-size: 61px;
-}
-.content h1 p{
-  margin: 20px auto;
-}
-  button{
-    width: 200px;
-    padding: 15px 0;
-    border-radius: 15px;
-    border: 0px;
-    margin: 20px;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    background-color: #146C94;
-    font-size: 17px;
-}
-button:hover{
-  background-color: #19A7CE;
+  margin: -30px 40px;
   transition: 0.5s;
 }
-p{
-  font-size: 20px;
-  font-family: sans-serif;
+.menu button:hover {
+  background-color: #121212;
 }
-a:hover{
+.info {
+  margin: 30px 0px;
+}
+  .info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin: 10px 0px;
   transition: 0.5s;
-  box-shadow: 0px 5px #19A7CE;
+  box-shadow: 0px 0px 35px orange;
 }
-body{
-background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(https://cdn.pixabay.com/photo/2015/07/05/10/18/tree-832079_960_720.jpg);
-background-repeat: no-repeat;
-background-position: center;
-background-attachment: fixed;
-background-size: cover;
+.info img:hover {
+  box-shadow: 0px 0px 40px white;
+}
+  .info h1 {
+    font-size: 40px;
+    transition: 0.5s;
+  }
+  .info h2 {
+    font-size: 20px;
+    transition: 0.5s;
+  }
+.info button {
+  width: 125px;
+  height: 50px;
+  color: orange;
+  background-color: #121212;
+  border: 3px orange solid;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px 10px;
+  box-shadow: 0px 0px 10px orange;
+  transition: 0.5s;
+}
+.info button:hover {
+  border-color: white;
+  color: white;
+  box-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 10px white;
+}
+body {
+  background-color: #121212;
 }
     </style>
   </body>
