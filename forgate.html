@@ -2,98 +2,123 @@
 <html lang="tr" dir="ltr">
   <head>
     <meta charset="UTF-8">
-<meta name="description" content="Pane web tasarımcısıdır.">
-<meta name="keywords" content="pane, Pane, paneweb, PaneWeb,">
-<meta name="author" content="Pane">
+<meta name="description" content="Web tabanlı oyunlar geliştren bir firma">
+<meta name="keywords" content="forgate, forgate-oyun,">
+<meta name="author" content="forgate">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaneWeb</title>
+    <title>Forgate - Ana Sayfa</title>
   </head>
   <body>
 <div class="menu">
-  <button><a href="#">Ana sayfa</a></button>
-  <button><a href="#">Projelerim</a></button>
-  <button><a href="#">İletişim</a></button>
+  <a href="#"><button>Ana Sayfa</button></a>
+  <a href="#"><button>Projeler</button></a>
+  <a href="#"><button>İletişim</button></a>
 </div>
 <div class="info">
-  <img src="https://media.discordapp.net/attachments/1082363167436456026/1088505333409919056/pane.png" alt="pane">
-  <h1>Hakkımda</h1>
-  <h2>Yazılımcıyım<br>Harika bir web sitem<br> ve birBilgisayarım var</h2>
-  <button>Youtube</button>
-  <button>Instagram</button>
+  <br><br><br><br><br>
+  <h1>Forgate</h1>
+</div>
+<div class="dec">
+  <br><br>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/-sOadAaGiq4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <br>
+  <h2>Web tabanlı oyunlar<br>geliştren bir firma<br>gönüllü yazılımcı aranıyor</h2>
+  <button onclick="alert('Başvurunuz gönderildi!')">Başvur</button>
 </div>
     <style>
     * {
       margin: 0;
       padding: 0;
-      color: orange;
+      color: white;
       font-size: 20px;
-      text-align: center;
-      font-family: monospace;
-      text-shadow: 0px 0px 10px orange;
+      font-family: 'Bruno Ace SC', cursive;
     }
 .menu {
   width: 100%;
   height: 50px;
-  background-color: #242424;
+  background-color: #121212;
   line-height: 50px;
 }
-.menu a {
-  color: white;
-  text-shadow: 0px 0px 10px white;
-  text-decoration: none;
-}
-.menu button {
-  width: 120px;
-  height: 50px;
-  background-color: #242424;
-  border: 0px;
-  text-align: center;
-  margin: -30px 40px;
-  transition: 0.5s;
-}
-.menu button:hover {
-  background-color: #121212;
-}
+  .menu button {
+    width: 10%;
+    height: 100%;
+    background-color: #121212;
+    border: 0px solid;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: white;
+    margin: 0px 25px;
+    transition: 0.5s;
+  }
+    .menu button:hover {
+    width: 10%;
+    height: 100%;
+    background-color: white;
+    border: 0px solid;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #121212;
+    margin: 0px 25px;
+    transition: 0.5s;
+  }
 .info {
-  margin: 30px 0px;
-}
-  .info img {
-  width: 100px;
-  height: 100px;
-  border-radius: 20px;
-  margin: 10px 0px;
-  transition: 0.5s;
-  box-shadow: 0px 0px 35px orange;
-}
-.info img:hover {
-  box-shadow: 0px 0px 40px white;
+  margin: 0px 0px;
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),
+  url('https://cdn.pixabay.com/photo/2015/12/05/08/25/fantasy-1077863_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
   .info h1 {
-    font-size: 40px;
+    font-size: 100px;
+    text-align: center;
+    margin: 0px auto;
     transition: 0.5s;
   }
-  .info h2 {
-    font-size: 20px;
+  .dec {
+    margin: 0px 0px;
+    width: 100%;
+    height: 550px;
+    background-color: #121212;
+  }
+  .dec iframe {
+    margin: -20px auto;
+    display: block;
+    border-radius: 10px;
+    border: 10px white solid;
+  }
+  .dec h2 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0px auto;
     transition: 0.5s;
   }
-.info button {
-  width: 125px;
-  height: 50px;
-  color: orange;
-  background-color: #121212;
-  border: 3px orange solid;
-  border-radius: 5px;
-  text-align: center;
-  margin: 10px 10px;
-  box-shadow: 0px 0px 10px orange;
-  transition: 0.5s;
-}
-.info button:hover {
-  border-color: white;
-  color: white;
-  box-shadow: 0px 0px 10px white;
-  text-shadow: 0px 0px 10px white;
-}
+  .dec button {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: 3px white solid;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #121212;
+    margin: 10px auto;
+    cursor: pointer;
+    display: block;
+    transition: 0.5s;
+  }
+    .dec button:hover {
+    width: 100px;
+    height: 50px;
+    background-color: #121212;
+    border: 3px white solid;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: white;
+    margin: 10px auto;
+    display: block;
+  }
 body {
   background-color: #121212;
 }
