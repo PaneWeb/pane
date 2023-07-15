@@ -2,11 +2,10 @@
 <html lang="tr" dir="ltr">
   <head>
     <meta charset="UTF-8">
-<meta name="description" content="Web tabanlı oyunlar geliştren bir firma">
-<meta name="keywords" content="forgate, forgate-oyun,">
-<meta name="author" content="forgate">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgate - Ana Sayfa</title>
+    <meta name="description" content="Pane web tasarımcısıdır.">
+    <meta name="keywords" content="pane, Pane, paneweb, PaneWeb,">
+    <meta name="author" content="Pane">
+    <title>Pane - tema 1</title>
   </head>
   <body>
 <div class="menu">
@@ -15,15 +14,22 @@
   <a href="#"><button>İletişim</button></a>
 </div>
 <div class="info">
-  <br><br><br><br><br>
-  <h1>Forgate</h1>
+  <h1>Pane</h1>
 </div>
 <div class="dec">
-  <br><br>
-<iframe width="500" height="300" src="https://www.youtube.com/embed/-sOadAaGiq4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <br>
-  <h2>Web tabanlı oyunlar<br>geliştren bir firma<br>gönüllü yazılımcı aranıyor</h2>
-  <button onclick="alert('Başvurunuz gönderildi!')">Başvur</button>
+  <h1>Hikayem</h1>
+  <h2>2020 yılında web tasarımcı olmaya karar verdim daha sonra web tabanlı oyunlar geliştirip işleri iyice ilerlettim fakat aşırı tembel olduğumdan dolayı aman bu kadar yeter diyip şu anda da buradayım bir süre ara verdim</h2>
+</div>
+<div class="nec">
+  <h1>Hakkımda</h1>
+  <h2>Ekmekleri severim ve elmaları severim ama bu işten pek para kazanamam ama mama yemek hobimdir ayrıca ırkçılık güzel şeydir amma velakin benım sakalımın bir teline zarar gelir ise işte o zaman sizlerede zarar gelir</h2>
+</div>
+<div class="bec">
+  <h1>Projelerim</h1>
+  <h2>çeşitli yaptığım içerikleri burada paylaşabilirim ayrıca sizlerden gelen şeyleride burada paylaşabilirim fakat bir şart ile küp olcaksın arkadaş öyle sadece sinir küpü akıl küpü falan değil tipinde küp olcak</h2>
+</div>
+<div class="not">
+  <h1>Pane adlı sitenin tüm hakları saklıdır. © 2023</h1>
 </div>
     <style>
     * {
@@ -31,7 +37,7 @@
       padding: 0;
       color: white;
       font-size: 20px;
-      font-family: 'Bruno Ace SC', cursive;
+      font-family: sans-serif;
     }
 .menu {
   width: 100%;
@@ -48,7 +54,7 @@
     text-decoration: none;
     color: white;
     margin: 0px 25px;
-    transition: 0.5s;
+    transition: 0.3s;
   }
     .menu button:hover {
     width: 10%;
@@ -75,25 +81,38 @@
     font-size: 100px;
     text-align: center;
     margin: 0px auto;
+    line-height: 500px;
     transition: 0.5s;
   }
   .dec {
-    margin: 0px 0px;
-    width: 100%;
-    height: 550px;
+    margin: 0 35%;
+    width: 30%;
+    height: 100%;
     background-color: #121212;
+    position: absolute;
+  }
+  .dec:hover {
+    background-color: #242424;
+  }
+  .dec h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 0px auto;
+    line-height: 1.5;
+    transition: 0.5s;
+  }
+  .dec h2 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0px auto;
+    line-height: 1.5;
+    transition: 0.5s;
   }
   .dec iframe {
     margin: -20px auto;
     display: block;
     border-radius: 10px;
     border: 10px white solid;
-  }
-  .dec h2 {
-    font-size: 25px;
-    text-align: center;
-    margin: 0px auto;
-    transition: 0.5s;
   }
   .dec button {
     width: 100px;
@@ -118,6 +137,127 @@
     color: white;
     margin: 10px auto;
     display: block;
+  }
+  .nec {
+    margin: 0 0;
+    width: 30%;
+    height: 100%;
+    background-color: #121212;
+    position: absolute;
+  }
+  .nec:hover {
+    background-color: #242424;
+  }
+  .nec h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 0px auto;
+    line-height: 1.5;
+    transition: 0.5s;
+  }
+  .nec h2 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0px auto;
+    line-height: 1.5;
+    transition: 0.5s;
+  }
+  .nec iframe {
+    margin: -20px auto;
+    display: block;
+    border-radius: 10px;
+    border: 10px white solid;
+  }
+  .nec button {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: 3px white solid;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #121212;
+    margin: 10px auto;
+    cursor: pointer;
+    display: block;
+    transition: 0.5s;
+  }
+    .nec button:hover {
+    width: 100px;
+    height: 50px;
+    background-color: #121212;
+    border: 3px white solid;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: white;
+    margin: 10px auto;
+    display: block;
+  }
+  .bec {
+    margin: 0 70%;
+    width: 30%;
+    height: 100%;
+    background-color: #121212;
+    position: absolute;
+  }
+  .bec:hover {
+    background-color: #242424;
+  }
+  .bec h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 0px auto;
+    line-height: 1.5;
+    transition: 0.5s;
+  }
+  .bec h2 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0px auto;
+    line-height: 1.5;
+    transition: 0.5s;
+  }
+  .bec iframe {
+    margin: -20px auto;
+    display: block;
+    border-radius: 10px;
+    border: 10px white solid;
+  }
+  .bec button {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: 3px white solid;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #121212;
+    margin: 10px auto;
+    cursor: pointer;
+    display: block;
+    transition: 0.5s;
+  }
+    .bec button:hover {
+    width: 100px;
+    height: 50px;
+    background-color: #121212;
+    border: 3px white solid;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: white;
+    margin: 10px auto;
+    display: block;
+  }
+  .not {
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    background-color: #242424;
+  }
+  .not h1 {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0px auto;
+    line-height: 1.5;
+    margin-top: 58%;
   }
 body {
   background-color: #121212;
