@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <center>
+    <canvas id="canvas" width="300" height="300"></canvas>
+</center>
+    <style>
+    body{
+      background-color: #121212;
+    }
+canvas{
+  background-color: #121212;
+    border: 5px white solid;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px white;
+    transition: 0.5s;
+}
+    </style>
+    <script>
+    // Deisgenler ...
+var x1 = 150; var y1 = 150;
+var x2 = 100; var y2 = 100;
+    //  Kontroller (oyuncu)
+  window.addEventListener('keyup', q => {
+    if (q.key === 'd') {x1+=10;}
+    if (q.key === 'a') {x1-=10;}
+    if (q.key === 'w') {y1-=10;}
+    if (q.key === 's') {y1+=10;}
+  });
+  setInterval(w => {
+    // Duvar  (oyuncu)
+    if (x1 == 290) {x1-=10;}
+    if (x1 == -10) {x1+=10;}
+    if (y1 == -10) {y1+=10;}
+    if (y1 == 290) {y1-=10;}
+    var $screen = document.getElementById('canvas');
+    var bob = $screen.getContext('2d');
+    bob.clearRect(0,0,300,300);
+    //  Oyuncu
+    bob.fillStyle='white';
+    bob.beginPath();
+  bob.roundRect(x1,y1,20,20,3);
+  bob.fill();
+        //  Kutu
+    bob.fillStyle='white';
+    bob.beginPath();
+  bob.roundRect(x2,y2,20,20,3);
+  bob.fill();
+  // Kutu (etkileşim)
+  if (x2 == x1+10) {if (y2 == y1) {x2+=10;}}
+  if (x2 == x1) {if (y2 == y1+10) {y2+=10;}}
+// ----------------------------------------
+  if (x2 == x1-10) {if (y2 == y1) {x2-=10;}}
+  if (x2 == x1) {if (y2 == y1-10) {y2-=10;}}
+  // Duvar (kutu)
+  if (x2 == 290) {x2-=10;}
+  if (x2 == -10) {x2+=10;}
+  if (y2 == -10) {y2+=10;}
+  if (y2 == 290) {y2-=10;}
+  },10);
+    </script>
+  </body>
+</html>
