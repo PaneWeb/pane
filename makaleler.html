@@ -15,18 +15,53 @@
   <button><a href="#">Makaleler</a></button>
 </div>
 <div class="info">
-    <br><br><br>
-    <h1>Geliştirme aşamasında :(</h1>
+    <h2>
+Merhaba bu sayfada Linux kullanıcıları için
+birkaç makale yayınlayacağım. <br>
+İlk önce bir masaüstü ortamı oluşturmak için sizlere 
+birkaç tavsiyede bulunacağım. Fakat bunlar basit ve <br>
+yeni başlayanlar için olacak. 
+eğer Linux'u bilgisayarınıza yeni kurduysanız ve bilgisayarınızı <br>
+kişiselleştirmek istiyorsanız ilk önce iconlardan başlayalım. 
+<a href="https://snwh.org/paper">https://snwh.org/paper</a> <br>
+Buradaki bağlantı iconlarınızı daha iyi ve şık 
+bir hale getirir. Dağtımınıza göre oradaki kodlar yardımıyla <br>
+icon temayı indirin. Fakat ondan önce Gnome-Tweaks, Extensions Manager 
+gibi araçları indirmeniz gerekecek. <br>
+</h2>
+<h1>
+
+# Gnome-Tweaks indirme kodu <br> <br>
+
+sudo apt install Gnome-Tweaks <br> <br>
+
+# Extions Manager indirme kodu <br> <br>
+
+sudo apt install extions <br>
+</h1>
+<h2>
+Tabi siz uygulama mağzasından manual indirme yapabilirsiniz. <br>
+Şimdi ise arka plan işinizi halledelim 
+siz istediğiniz gibi arkaplanlar kulanabilirsiniz. <br>
+Fakat bilgisayarınızın daha hızlı kulanılması açısından 
+sizlere bu arkaplanı öneriyorum. <br>
+</h2>
+<img src="https://media.discordapp.net/attachments/1104784225510621416/1169256527824171150/colors.png?ex=655df87f&is=654b837f&hm=9683d20d670d08f20509cebca82cdbdd715d189cce1f055bed8672a71a67c44e&=&width=587&height=367">
+<h2>
+Eğer bu adımların hepsini eksiksiz yaptıysanız doğru sonuç almanız <br>
+olasıdır. Ayrıca birazdaha araştırıp 
+insanların neler yaptığına bakabilirsiniz. <br>
+Şimdiden kolay gelsin :) 
+    </h2>
 </div>
     <style>
     * {
       margin: 0;
       padding: 0;
-      color: orange;
+      color: white;
       font-size: 20px;
       text-align: center;
       font-family: monospace;
-      text-shadow: 0px 0px 10px orange;
     }
 .menu {
   width: 100%;
@@ -51,10 +86,61 @@
 .menu button:hover {
   background-color: #121212;
 }
-.info h1 {
-font-size: 1.3em;
+.info {
+  width: 800px;
+  height: 100%;
+  margin: 10px auto;
+  border: 5px white solid;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px white;
 }
-    body {
+  .info img {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0px 0px 5px white;
+}
+.info img:hover {
+  box-shadow: 0px 0px 10px white;
+}
+  .info h1 {
+    font-size: 20px;
+    background-color: #242424;
+    text-align: left;
+    font-family: monospace;
+    padding: 20px;
+    transition: 0.5s;
+  }
+  .info a {
+color: orange;
+transition: 0.5s;
+  }
+  .info h2 {
+    font-size: 20px;
+    text-align: left;
+    padding: 20px;
+    transition: 0.5s;
+  }
+.info button {
+  width: 125px;
+  height: 50px;
+  color: orange;
+  background-color: #121212;
+  border: 3px orange solid;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px 10px;
+  box-shadow: 0px 0px 10px orange;
+  transition: 0.5s;
+}
+.info button:hover {
+  border-color: white;
+  color: white;
+  box-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 10px white;
+}
+body {
   background-color: #121212;
 }
     </style>
