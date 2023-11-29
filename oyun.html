@@ -5,11 +5,6 @@
     <title>Pane - Oyun Projesi (Demo)</title>
   </head>
   <body id="bdy1">
-    <audio id="myAudio">
-  <source src="bob" type="audio/ogg">
-  <source src="bob" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 <input id="npt1" type="button">
 <input id="npt2" type="button" value="' '">
 <input id="npt3" type="button">
@@ -98,7 +93,6 @@
   var x1 = 400;
   var o1 = 0;
   var o2 = 0;
-  var x = document.getElementById("myAudio"); 
   var $font = document.getElementById('fnt1');
 window.addEventListener('keydown', w => {
     if (w.key === 'd') {x1+=5;}
@@ -139,13 +133,9 @@ if (n1 == 1) {
   n1=0;
   }
 }
-function playAudio() { 
-  x.play(); 
-}
 setInterval(f1,10);
 setInterval(f2,1000);
 setInterval(f3,2000);
-setInterval(playAudio,1000);
 
 setTimeout(q => {
     if (o2 == 0) {
