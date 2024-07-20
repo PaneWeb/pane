@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sayfa başlığı</title>
+</head>
+<body>
+    <audio src="sound.mp3" id="sound"></audio>
+    <font>0</font>
+    </body>
+    <style>
+        body {
+            background: #121212;
+        }
+        input {
+            background: yellow;
+            border-radius: 3px;
+            border: 0px;
+            box-shadow: 0px 0px 20px yellow;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
+        font {
+            position: absolute;
+            left: 150px;
+            top: 200px;
+            color: #242424;
+            font-size: 5em;
+        }
+    </style>    
+   <script>
+   var a = 1000;
+   var x = 100;
+   var y = 100;
+   var op = 0;
+   var skor = 0;
+   var sound = document.getElementById('sound');
+  function c1() {
+  if (op < 10) {
+  var input = document.createElement("input"); document.getElementById('div');
+  input.setAttribute("type", "button"); input.style="left:"+x+"px;top:"+y+"px;";
+  input.addEventListener('click',q => {
+      input.style="box-shadow:0px 0px 0px black;background:#121212;";op-=1;skor+=1;a-=100;
+document.querySelector('font').innerHTML=skor;
+  })
+  document.body.appendChild(input);
+  op+=1;
+  if (op == 10) {document.querySelector('body').innerHTML='<body><style>body{background:black;}font{font-size:2em;color:white;background:black;}</style> <center><font>silivri soğuktur ;)<br>skor:'+skor+'</font><br><br><font>Ipucu:Ekranda çok fazla<br>ampul olursa faka basabilirsiniz!</font></center></body>';}
+ console.log(op);}
+}
+function y1() {
+x=Math.floor(Math.random() * 300) + 0;
+y=Math.floor(Math.random() * 500) + 30;
+}
+setInterval(y1,100);
+setInterval(c1,a);
+   </script>
+</html>

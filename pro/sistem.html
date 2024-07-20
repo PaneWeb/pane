@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Güneş Sistemi Modeli</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    canvas {
+      border: 1px solid black;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="solarSystem"></canvas>
+  <script>
+    const canvas = document.getElementById('solarSystem');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const sun = { x: canvas.width / 2, y: canvas.height / 2, radius: 30, color: 'yellow' };
+    const planets = [
+      { name: 'Merkür', radius: 5, distance: 50, color: 'gray', orbitSpeed: 0.02, rotationSpeed: 0.03, angle: 0 },
+      { name: 'Venüs', radius: 8, distance: 80, color: 'orange', orbitSpeed: 0.015, rotationSpeed: 0.02, angle: 0 },
+      { name: 'Dünya', radius: 10, distance: 120, color: 'blue', orbitSpeed: 0.01, rotationSpeed: 0.01, angle: 0 },
+      // Add more planets as needed
+    ];
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw Sun
+      ctx.beginPath();
+      ctx.arc(sun.x, sun.y, sun.radius, 0, 2 * Math.PI);
+      ctx.fillStyle = sun.color;
+      ctx.fill();
+      ctx.closePath();
+
+      // Draw Planets
+      planets.forEach(planet => {
+        planet.angle += planet.orbitSpeed;
+        planet.rotation += planet.rotationSpeed;
+
+        const planetX = sun.x + planet.distance * Math.cos(planet.angle);
+        const planetY = sun.y + planet.distance * Math.sin(planet.angle);
+
+        ctx.save();
+        ctx.translate(planetX, planetY);
+        ctx.rotate(planet.rotation);
+
+        ctx.beginPath();
+        ctx.arc(0, 0, planet.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = planet.color;
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.restore();
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
+</body>
+</html>

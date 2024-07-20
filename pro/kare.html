@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        body {
+            background: white;
+            margin: 0;
+        }
+        input {
+            width: 20px;
+            height: 20px;
+            border: 4px black solid;
+            border-radius: 300px;
+            position: absolute;
+            transition: 0.3s;
+        }
+        div {
+            border: 5px black solid;
+            width: 350px;
+            height: 550px;
+            opacity: 0.8;
+        }
+        #npt1 {background: #8098ff;}
+        #npt2 {background: #ff4055;}
+        #npt3 {background: #86ff6a;}
+      #goz {
+        width: 0px;
+        height: 0px;
+        border: 5px black solid;
+        border-radius: 100px;
+        position: absolute;
+        transition: 0.1s;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+      <div></div>
+<input type="button" id="npt1" onclick="mod=1" ondblclick="mod=0">
+<input type="button" id="npt2" onclick="mod=2" ondblclick="mod=0">
+<input type="button" id="npt3" onclick="mod=3" ondblclick="mod=0">
+    <div id="goz"></div>
+    <script src="script.js"></script>
+    <script>
+ var random1 = Math.floor(Math.random()*4);
+ var random2 = Math.floor(Math.random()*4);
+ var random3 = Math.floor(Math.random()*4);
+ var t1 = document.getElementById('npt1');
+ var t2 = document.getElementById('npt2');
+ var t3 = document.getElementById('npt3');
+        var x1 = 100; var y1 = 100;
+        var x2 = 150; var y2 = 150;
+        var x3 = 100; var y3 = 300;
+        var speed = 5; var mod = 0;
+        var mouseX = 100; var mouseY = 100;
+        var goz = document.getElementById("goz");
+        
+document.addEventListener("click", function(event) {
+   mouseX = event.clientX;
+   mouseY = event.clientY;
+
+  goz.style.left = mouseX - goz.offsetWidth / 2 + "px";
+  goz.style.top = mouseY - goz.offsetHeight / 2 + "px";
+});
+function f1() {
+t1.style="left:"+x1+"px;top:"+y1+"px;";
+t2.style="left:"+x2+"px;top:"+y2+"px;";
+t3.style="left:"+x3+"px;top:"+y3+"px;";
+
+if (mod == 1) {t1.style.border="3px #fff180 solid"} else {t1.style.border="3px black solid"}
+
+if (mod == 2) {t2.style.border="3px #fff180 solid"} else {t2.style.border="3px black solid"}
+
+if (mod == 3) {t3.style.border="3px #fff180 solid"} else {t3.style.border="3px black solid"}
+
+if(mod == 1) {
+ if (x1 < mouseX-10) {x1+=speed;}
+ if (x1 > mouseX) {x1-=speed;}
+ if (y1 > mouseY) {y1-=speed;}
+ if (y1 < mouseY-10) {y1+=speed;}
+} if(mod == 2) {
+ if (x2 < mouseX-10) {x2+=speed;}
+ if (x2 > mouseX) {x2-=speed;}
+ if (y2 > mouseY) {y2-=speed;}
+ if (y2 < mouseY-10) {y2+=speed;}
+} if(mod == 3) {
+ if (x3 < mouseX-10) {x3+=speed;}
+ if (x3 > mouseX) {x3-=speed;}
+ if (y3 > mouseY) {y3-=speed;}
+ if (y3 < mouseY-10) {y3+=speed;}
+ }
+ if (x1 > 350) {x1-=speed;}
+ if (x1 < 0) {x1+=speed;}
+ if (y1 < 0) {y1+=speed;}
+ if (y1 > 550) {y1-=speed;}
+  // -------------------
+ if (x2 > 350) {x2-=speed;}
+ if (x2 < 0) {x2+=speed;}
+ if (y2 < 0) {y2+=speed;}
+ if (y2 > 550) {y2-=speed;}
+  // -------------------
+ if (x3 > 350) {x3-=speed;}
+ if (x3 < 0) {x3+=speed;}
+ if (y3 < 0) {y3+=speed;}
+ if (y3 > 550) {y3-=speed;}
+if(mod !== 1) {
+ if (random1 == 0) {x1+=speed;}
+ if (random1 == 1) {x1-=speed;}
+ if (random1 == 2) {y1-=speed;}
+ if (random1 == 3) {y1+=speed;}
+ } if(mod !== 2) {
+ if (random2 == 0) {x2+=speed;}
+ if (random2 == 1) {x2-=speed;}
+ if (random2 == 2) {y2-=speed;}
+ if (random2 == 3) {y2+=speed;}
+ } if(mod !== 3) {
+ if (random3 == 0) {x3+=speed;}
+ if (random3 == 1) {x3-=speed;}
+ if (random3 == 2) {y3-=speed;}
+ if (random3 == 3) {y3+=speed;}
+  }
+ }
+ function f2() {
+     random1=Math.floor(Math.random()*4);
+     random2=Math.floor(Math.random()*4);
+     random3=Math.floor(Math.random()*4);
+ }
+ 
+ setInterval(f1,100)
+ setInterval(f2,500)
+    </script>
+  </body>
+</html>
