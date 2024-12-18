@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colore.html</title>
+  </head>
+  <body id="bot">
+    <script>
+      red();
+      function red() {
+        document.getElementById('bot').style="background:red;";
+        setTimeout(yellow,500);
+      }
+      function yellow() {
+        document.getElementById('bot').style="background:yellow;";
+        setTimeout(green,500);
+      }
+      function green() {
+        document.getElementById('bot').style="background:green;";
+        setTimeout(blue,500);
+      }
+      function blue() {
+        document.getElementById('bot').style="background:blue;";
+        setTimeout(red,500);
+      }
+    </script>
+  </body>
+</html>
