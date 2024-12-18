@@ -23,6 +23,9 @@
             <button class="prjs"id="btn2"><p>kare.html</p><p>16.04.2024</p></button>
             <button class="prjs"id="btn3"><p>sistem.html</p><p>01.05.2024</p></button>
             <button class="prjs"id="btn4"><p>ampul.html</p><p>19.06.2024</p></button>
+            <button class="prjs"id="btn5"><p>click.html</p><p>10.04.2020</p></button>
+            <button class="prjs"id="btn6"><p>colore.html</p><p>11.05.2021</p></button>
+            <button class="prjs"id="btn7"><p>drive.html</p><p>19.01.2023</p></button>
         </div>
     </div>
     <div class="endbar">
@@ -45,19 +48,29 @@ body { background:#EEEEEE; }
 .endbar p { color:#EEEEEE;font-size:1.2em; }
 @media only screen and (max-width: 600px) {
 .navbar a { font-size:20px }
-.tbl1 button p { font-size:70%; }
+.tbl1 { width: 80%; }
+.tbl1 button p { font-size:75%; }
 }
     </style>
     <script>
-        const btn1 = document.getElementById('btn1');
-        const btn2 = document.getElementById('btn2');
-        const btn3 = document.getElementById('btn3');
-        const btn4 = document.getElementById('btn4');
+const buttons = {
+    btn1: 'pro/wall.html',
+    btn2: 'pro/kare.html',
+    btn3: 'pro/sistem.html',
+    btn4: 'pro/ampul.html',
+    btn5: 'pro/click.html',
+    btn6: 'pro/colore.html',
+    btn7: 'pro/drive.html'
+};
 
-        btn1.addEventListener('click', () => {window.location.href="pro/wall.html";});
-        btn2.addEventListener('click', () => {window.location.href="pro/kare.html";});
-        btn3.addEventListener('click', () => {window.location.href="pro/sistem.html";});
-        btn4.addEventListener('click', () => {window.location.href="pro/ampul.html";});
+Object.keys(buttons).forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) {
+        btn.addEventListener('click', () => {
+            window.location.href = buttons[id];
+        });
+    }
+});
     </script>
     </body>
 </html>
