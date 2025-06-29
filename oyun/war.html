@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sayfa başlığı</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+    <div id="div"></div>
+        <input type="button" id="base1">
+        <div id="chest1">
+            <input type="button" id="money">
+            <font id="f1">0</font>
+            <input type="button" id="solder">
+            <font id="f2">0</font>
+            
+            <audio>
+            <source src="war.mp3">
+            </source>
+            </audio>
+        </div>
+        <div id="reklam">i hate that ads ;)</div>
+    <style>
+        body {
+  overflow: hidden;
+  touch-action: manipulation;
+}
+body {
+background: #bfd5ff;
+}
+#chest1 {
+background: #95a2ff;
+border: 5px black solid;
+border-radius: 10px;
+width: 150px;
+height: 100px;
+position: absolute;
+}
+#money {
+width: 30px;
+height: 30px;
+border: 7px black solid;
+border-radius: 100%;
+background: #f8ff80;
+position: absolute;
+left: 10px;
+top: 10px;
+}
+#solder {
+width: 30px;
+height: 30px;
+border: 7px black solid;
+border-radius: 100%;
+background: #9cff95;
+position: absolute;
+left: 10px;
+top: 50px;
+}
+#f1 {
+font-family: sans-serif;
+font-size: 2em;
+color: #f8ff80;
+position: absolute;
+left: 50px;
+top: 5px;
+}
+#f2 {
+font-family: sans-serif;
+font-size: 2em;
+color: #9cff95;
+position: absolute;
+left: 50px;
+top: 45px;
+}
+#base1 {
+width: 50px;
+height: 50px;
+border: 10px black solid;
+border-radius: 100%;
+background: #9bff6a;
+transition: 0.3s;
+position: absolute;
+left: 200px;
+top: 50px;
+}
+button {
+width: 20px;
+height: 22px;
+border: 5px black solid;
+border-radius: 100%;
+transition: 0.3s;
+position: absolute;
+}
+
+#reklam {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #242424;
+  color: #484848;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+#eneB {
+    position: absolute;
+    border: 3px #333 solid;
+    width: 330px;
+    height: 330px;
+    top: 150px;
+}
+
+#sos {background: #9bff6a;}
+#ene {background: #ff8a80;}
+    </style>
+    <script>
+let ss = [];
+let ee = [];
+let st = 0;
+let et = 0;
+let x = 200;
+let y = 150;
+let s1 = 0;
+let s2 = 0;
+let biz = 2;
+let siz = 2;
+let speed = 5;
+let money = 3;
+let wave = 0
+let rX = Math.floor(Math.random()*350);
+let rY = Math.floor(Math.random()*450);
+const div = document.getElementById('div');
+const f1 = document.getElementById('f1');
+const f2 = document.getElementById('f2');
+const bs = document.getElementById('chest1');
+const body = document.querySelector('body');
+
+// Emir
+window.addEventListener('click', (event) => {
+    x = event.clientX;
+    y = event.clientY;
+    number=1;
+});
+
+// Market
+bs.addEventListener('click', () => {
+if (money > 4) {money-=5;biz+=1;}
+})
+
+// Başlat
+createSos();
+createEne();
+
+function createSos() {
+while (s1 < biz) {
+let sos = document.createElement('button');
+sos.setAttribute('id','sos');
+div.appendChild(sos);
+sos.style.left=210+"px";
+sos.style.top=70+"px";
+ss.push(sos);
+s1+=1;
+}
+}
+function createEne() {
+while (s2 < siz) {
+let ene = document.createElement('button');
+ene.setAttribute('id','ene');
+div.appendChild(ene);
+ene.style.left=-100+"px";
+ene.style.top=500+"px";
+ee.push(ene);
+s2+=1;
+}
+rX=Math.floor(Math.random()*330)+30;
+rY=Math.floor(Math.random()*330)+150;
+}
+function move(eneX,eneY,sosX,sosY) {
+
+if (s2 == 0) {levels();}
+
+ss.forEach(sos => {
+let random1 = Math.floor(Math.random()*4);
+
+let sosX = parseInt(sos.style.left);
+let sosY = parseInt(sos.style.top);
+
+if (random1 == 0) {sosX+=speed;}
+if (random1 == 1) {sosX-=speed;}
+if (random1 == 2) {sosY+=speed;}
+if (random1 == 3) {sosY-=speed;}
+
+// Takip
+if (sosX < x-30) {sosX+=speed;}
+if (sosX > x+20) {sosX-=speed;}
+if (sosY > y-35) {sosY-=speed;}
+if (sosY < y+10) {sosY+=speed;}
+
+// Savaş
+ee.forEach(ene => {
+let eneX = parseInt(ene.style.left);
+let eneY = parseInt(ene.style.top);      
+if (sosX === eneX && sosY === eneY) {
+let war = Math.floor(Math.random() * 3);
+if (war === 0) {
+sos.remove();
+ss.splice(ss.indexOf(sos), 2);
+s1-=1;biz-=1;
+} else {
+ene.remove();
+ee.splice(ee.indexOf(ene), 1);
+s2-=1;money+=3;
+}
+ }
+  });
+
+sos.style.left=sosX+"px";
+sos.style.top=sosY+ "px";
+});
+ee.forEach(ene => {
+let random2 = Math.floor(Math.random()*4);
+
+let eneX = parseInt(ene.style.left);
+let eneY = parseInt(ene.style.top);
+
+if (random2 == 0) {eneX+=speed;}
+if (random2 == 1) {eneX-=speed;}
+if (random2 == 2) {eneY+=speed;}
+if (random2 == 3) {eneY-=speed;}
+
+// Kamp
+if (eneX > rX-20) {eneX-=speed;}
+if (eneX < rX+15) {eneX+=speed;}
+if (eneY > rY+10) {eneY-=speed;}
+if (eneY < rY-30) {eneY+=speed;}
+
+ene.style.left=eneX+"px";
+ene.style.top=eneY+ "px";
+});
+f2.innerHTML=s1+'/'+biz;
+f1.innerHTML=money;
+if (s1 < 1) {
+    body.innerHTML="X_X";
+}
+if (wave > 10000) {
+   body.innerHTML=":)";
+}
+}
+function levels() {
+createSos();
+createEne();
+money+=1;
+wave+=1;siz+=2;
+}
+
+// Müzik
+var number = 0;
+const bus = document.querySelector("audio");        
+setInterval(w => {
+if(number == 1) {
+bus.play();
+}
+},1000);
+setInterval(levels,60000);
+setInterval(move,200);
+    </script>
+    <script>
+  // Sayfa yenilemeyi engelle
+  window.addEventListener('keydown', function (e) {
+    if ((e.key === 'F5') || 
+        (e.ctrlKey && e.key === 'r') || 
+        (e.metaKey && e.key === 'r')) {
+      e.preventDefault();
+    }
+  });
+
+  // Mobilde kaydırmayı engelle
+  window.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+  }, { passive: false });
+
+  // Çift dokunma yakınlaştırmasını engelle
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function (e) {
+    let now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      e.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+</script>
+</body>
+</html>
